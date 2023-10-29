@@ -1,0 +1,46 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}Собрать путишествие{% endblock %}
+
+{% block  content%}
+    <div class="features">
+        <h1>Собрать путишествие</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+<!--                <label for="customer_name">Имя</label>-->
+                {{ form.customer_name }}
+            </div>
+            <div class="form-group">
+<!--                <label for="customer_surname">Фамилия</label>-->
+                {{ form.customer_surname }}
+            </div>
+            <div class="form-group">
+<!--                <label for="customer_email">Электронный адрес</label>-->
+                {{ form.customer_email }}
+                <small id="emailHelp" class="form-text text-muted">Мы используем адрес электронной почть только для обратной связи</small>
+            </div>
+            <div class="form-group">
+<!--                <label>Знаю куда хочу?</label>-->
+                {{ form.knows_where_to_go }}
+            </div>
+            <div class="form-group">
+<!--                <label for="country_to_visit">Страна визита</label>-->
+                {{ form.country_to_visit }}
+            </div>
+            <div class="form-group">
+<!--                <label for="trip_start_date">Дата начала поездки</label>-->
+                {{ form.trip_start_date }}
+            </div>
+            <div class="form-group">
+<!--                <label for="trip_finish_date">Дата конца поездки</label>-->
+                {{ form.trip_finish_date }}
+            </div>
+            <span>{{ error }}</span>
+            <div class="form-group">
+                <button class="btn btn-success">Сохранить</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
